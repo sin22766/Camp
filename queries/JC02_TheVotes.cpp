@@ -2,9 +2,7 @@
 
 using namespace std;
 
-int main(){
-    int n;
+int main() {
 
-    scanf("%d")
+    return 0;
 }
-
