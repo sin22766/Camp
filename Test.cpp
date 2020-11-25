@@ -4,8 +4,10 @@ using namespace std;
 
 void solver(int size, int tree[], bool state[], int i) {
     if (!state[i]) {
+        state[i] = true;
         solver(size, tree, state, i * 2);
     } else {
+        state[i] = false;
         solver(size, tree, state, i * 2 + 1);
     }
 }
