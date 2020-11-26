@@ -21,10 +21,16 @@ int main() {
         int before = (s.empty()) ? 0 : s.top();
         int dif = building[i] - building[before];
         table[i] = max(dif, table[before]);
+        s.push(i);
     }
 
-    for (int i = 0; i < n; ++i) {
-        cout << table[i] << " ";
+    sort(table, table + n);
+
+    for (int i = 0; i < m; ++i) {
+        int q;
+        scanf("%d", &q);
+        int temp = (int) (upper_bound(table, table + n, q) - table);
+        cout << n - temp << "\n";
     }
 
     return 0;
